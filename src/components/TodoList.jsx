@@ -1,4 +1,4 @@
-import { Stack, Checkbox, Paper, Button } from '@mantine/core';
+import { Stack, Checkbox, Paper, Button } from "@mantine/core";
 
 function TodoItems({ tasks, toggleTask, removeTask }) {
   return (
@@ -10,14 +10,25 @@ function TodoItems({ tasks, toggleTask, removeTask }) {
       gap="xs"
     >
       {tasks.map((task) => (
-        <Paper key={task.id} shadow="xs" withBorder p="xs" style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Paper
+          key={task.id}
+          shadow="xs"
+          withBorder
+          p="xs"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
           <Checkbox
             checked={task.completed}
             label={task.title}
             color="green"
             radius="xl"
             size="lg"
-            style={{ flex: 1, marginTop: 5, marginRight: 10, textDecoration: task.completed ? 'line-through' : 'none' }}
+            style={{
+              flex: 1,
+              marginTop: 5,
+              marginRight: 10,
+              textDecoration: task.completed ? "line-through" : "none",
+            }}
             onChange={() => toggleTask(task.id)}
           />
           <Button
@@ -33,6 +44,6 @@ function TodoItems({ tasks, toggleTask, removeTask }) {
       ))}
     </Stack>
   );
-};
+}
 
 export default TodoItems;
